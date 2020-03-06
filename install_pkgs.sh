@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
-    sudo yum install -y vim ctags tmux htop
+    sudo yum install -y vim ctags cscope tmux htop
     echo "Installation finished for CentOS/Fedora."
 
 elif [ -f /etc/debian_version ]; then
