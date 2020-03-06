@@ -1,12 +1,15 @@
 #!/bin/bash
-echo Setting up vim.
+git submodule update --init
+(cd vim && git submodule update --init)
+
+echo "[vim]"
 (cd vim && ./setup.sh && echo Done.)
 
-echo Setting up mkcscope.
+echo "[mkcscope]"
 (cd mkcscope && sudo ./setup.sh && echo Done.)
 
-echo Setting up tmux.
+echo "[tmux]"
 (cd tmux && ./setup.sh && echo Done.)
 
-echo Setting up git.
+echo "[git]"
 (cd git_config && ./mk_link.sh && echo Done.)
