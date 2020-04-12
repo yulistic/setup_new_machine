@@ -1,3 +1,3 @@
 [submodule "vim"]
 	path = vim
-	url = git@gitlab.com:yulistic/vim_config.git
+	url = https://gitlab.com/yulistic/vim_config.git
