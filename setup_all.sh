@@ -13,3 +13,7 @@ echo "[tmux]"
 
 echo "[git]"
 (cd git_config && ./mk_link.sh && echo Done.)
+
+echo "[fzf]"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
