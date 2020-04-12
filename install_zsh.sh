@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 echo "[zsh]"
 
 # Install oh-my-zsh.
@@ -20,3 +20,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 #echo "zsh-autosuggestions"
 #echo "zsh-syntax-highlighting"
 #echo "to ~/.zshrc plugin."
+
+# Install zsh theme: powerlevel10k.
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
