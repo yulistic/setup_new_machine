@@ -28,6 +28,7 @@ elif [ -f /etc/lsb-release ]; then
     . /etc/lsb-release
     OS=$DISTRIB_ID
     VER=$DISTRIB_RELEASE
+    sudo apt-get install -y vim ctags cscope tmux htop
     echo "$OS is not supported (3)."
     exit 1
 elif [ -f /etc/SuSe-release ]; then
