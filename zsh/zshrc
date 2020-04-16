@@ -91,6 +91,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+unsetopt share_history
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
