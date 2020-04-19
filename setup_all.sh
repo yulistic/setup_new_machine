@@ -2,18 +2,10 @@
 git submodule update --init
 (cd vim && git submodule update --init)
 
-echo "[vim]"
-(cd vim && ./setup.sh && echo Done.)
+echo "[Install packages]"
+./install_pkgs.sh
 
-echo "[mkcscope]"
-(cd mkcscope && sudo ./setup.sh && echo Done.)
+echo "Change shell."
+chsh -s /usr/bin/zsh
 
-echo "[tmux]"
-(cd tmux && ./setup.sh && echo Done.)
-
-echo "[git]"
-(cd git_config && ./mk_link.sh && echo Done.)
-
-echo "[fzf]"
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+echo "Relogin to zsh and do remaining setup by executing: ./setup_in_zsh.sh"

@@ -1,14 +1,16 @@
 #!/bin/bash
+PKGS="vim ctags cscope tmux htop zsh"
 if [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
-    sudo yum install -y vim ctags cscope tmux htop
-    echo "Installation finished for CentOS/Fedora."
+    sudo yum install -y $PKGS
+    echo "Install packages for CentOS/Fedora done."
 
 elif [ -f /etc/debian_version ]; then
     # Older Debian/Ubuntu/etc.
     OS=Debian
     VER=$(cat /etc/debian_version)
-    echo "$OS is not supported (4)."
+    sudo apt-get install -y $PKGS
+    echo "Install packages for $OS done."
     exit 1
 elif [ -f /etc/os-release ]; then
     # freedesktop.org and systemd
@@ -21,15 +23,16 @@ elif type lsb_release >/dev/null 2>&1; then
     # linuxbase.org
     OS=$(lsb_release -si)
     VER=$(lsb_release -sr)
-    echo "$OS is not supported (2)."
+    sudo apt-get install -y $PKGS
+    echo "Install packages done."
     exit 1
 elif [ -f /etc/lsb-release ]; then
     # For some versions of Debian/Ubuntu without lsb_release command
     . /etc/lsb-release
     OS=$DISTRIB_ID
     VER=$DISTRIB_RELEASE
-    sudo apt-get install -y vim ctags cscope tmux htop
-    echo "$OS is not supported (3)."
+    sudo apt-get install -y $PKGS
+    echo "Install packages for $OS done."
     exit 1
 elif [ -f /etc/SuSe-release ]; then
     # Older SuSE/etc.

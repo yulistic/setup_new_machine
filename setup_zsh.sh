@@ -2,6 +2,8 @@
 echo "[zsh]"
 
 # Install oh-my-zsh.
+[ -d ~/.oh-my-zsh.old ] && echo "Remove ~/.oh-my-zsh.old" && rm -rf ~/.oh-my-zsh.old
+[ -d ~/.oh-my-zsh ] && echo "Original directory moved to ~/.oh-my-zsh.old" && mv ~/.oh-my-zsh ~/.oh-my-zsh.old
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Link .zshrc file.
