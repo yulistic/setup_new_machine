@@ -1,5 +1,5 @@
 #!/bin/bash
-PKGS="vim ctags cscope tmux htop zsh"
+PKGS="vim ctags cscope tmux htop zsh nvim python python3"
 if [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
     sudo yum install -y $PKGS
