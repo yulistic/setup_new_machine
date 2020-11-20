@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt share_history
 
 # export MANPATH="/usr/local/man:$MANPATH"
-PATH=$PATH:/snap/bin
+PATH=$PATH:/snap/bin:$HOME/.local/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -124,7 +124,8 @@ alias vim="nvim"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # tmux color issue.
-export TERM=xterm-256color
+# It conflicts with the term setup of tmux. Tmux only supports screen-256color.
+# export TERM=xterm-256color
 
 # locale setup.
 #export LC_ALL=ko_KR.UTF-8
