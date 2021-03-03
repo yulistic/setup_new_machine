@@ -1,18 +1,17 @@
 #!/bin/bash
-#PKGS="vim ctags cscope tmux htop zsh nvim python python3"
-PKGS="vim ctags cscope tmux htop zsh python python3"
+#PKGS="vim ctags cscope tmux htop zsh nvim python python3 ruby-dev"
+PKGS="vim ctags cscope tmux htop zsh python python3 ruby-dev"
+
 if [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
     sudo yum install -y $PKGS
     echo "Install packages for CentOS/Fedora done."
-
 elif [ -f /etc/debian_version ]; then
     # Older Debian/Ubuntu/etc.
     OS=Debian
     VER=$(cat /etc/debian_version)
     sudo apt-get install -y $PKGS
     echo "Install packages for $OS done."
-    exit 1
 elif [ -f /etc/os-release ]; then
     # freedesktop.org and systemd
     . /etc/os-release
@@ -26,7 +25,6 @@ elif type lsb_release >/dev/null 2>&1; then
     VER=$(lsb_release -sr)
     sudo apt-get install -y $PKGS
     echo "Install packages done."
-    exit 1
 elif [ -f /etc/lsb-release ]; then
     # For some versions of Debian/Ubuntu without lsb_release command
     . /etc/lsb-release
@@ -34,7 +32,6 @@ elif [ -f /etc/lsb-release ]; then
     VER=$DISTRIB_RELEASE
     sudo apt-get install -y $PKGS
     echo "Install packages for $OS done."
-    exit 1
 elif [ -f /etc/SuSe-release ]; then
     # Older SuSE/etc.
     echo "$OS is not supported (5)."
@@ -47,4 +44,10 @@ else
     exit 1
 fi
 
-
+# Install neovim.
+BIN_DIR="${HOME}/.local/bin"
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+mkdir -p $BIN_DIR
+mv nvim.appimage $BIN_DIR
+ln -s $BIN_DIR/nvim.appimage $BIN_DIR/nvim
