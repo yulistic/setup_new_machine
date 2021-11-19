@@ -80,7 +80,7 @@ plugins=(
     git
     bundler
     dotenv
-    osx
+    macos
     rake
     rbenv
     ruby
@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt share_history
 
 # export MANPATH="/usr/local/man:$MANPATH"
-PATH=$PATH:/snap/bin:$HOME/.local/bin
+PATH=$PATH:/snap/bin:$HOME/.local/bin:/Users/yulistic/Library/Python/2.7/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -136,3 +136,4 @@ export LC_ALL=en_US.UTF-8
 
 # Editor
 EDITOR=/usr/bin/vim
+export PATH="/usr/local/sbin:$PATH"
