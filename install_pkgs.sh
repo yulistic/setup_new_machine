@@ -1,6 +1,6 @@
 #!/bin/bash
 #PKGS="vim ctags cscope tmux htop zsh nvim python python3 ruby-dev"
-PKGS="vim ctags cscope tmux htop zsh python python3 ruby-dev"
+PKGS="vim ctags cscope tmux htop zsh python python-pip python3 python3-pip ruby-dev"
 
 if [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
