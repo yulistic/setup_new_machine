@@ -80,7 +80,7 @@ plugins=(
     git
     bundler
     dotenv
-    osx
+    macos
     rake
     rbenv
     ruby
@@ -136,3 +136,5 @@ export LC_ALL=en_US.UTF-8
 
 # Editor
 EDITOR=/usr/bin/vim
+
+POWERLEVEL9K_DISABLE_GITSTATUS=true
